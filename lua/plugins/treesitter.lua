@@ -1,12 +1,19 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  config = function()
-    local config = require("nvim-treesitter.configs")
-    config.setup({
-      ensure_installed = {"lua", "javascript", "c", "typescript"},
-      highlight = { enable = true },
-      indent = { enable = true }
-    })
-  end
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			local config = require("nvim-treesitter.configs")
+			config.setup({
+				ensure_installed = { "lua", "javascript", "c", "typescript", "rust", "go", "html", "prisma" , "sql"},
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
+	},
+	{
+		"virchau13/tree-sitter-astro",
+		run = ":TSUpdate",
+		after = "nvim-treesitter",
+	},
 }

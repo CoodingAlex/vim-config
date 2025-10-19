@@ -7,8 +7,6 @@ return {
       sources = {
         null_ls.builtins.formatting.prettier.with({
           filetypes = {
-            "javascript",
-            "typescript",
             "css",
             "scss",
             "html",
@@ -18,6 +16,8 @@ return {
             "graphql",
             "md",
             "txt",
+            "javascript",
+            "typescript",
           },
           only_local = "node_modules/.bin",
         }),
@@ -29,9 +29,9 @@ return {
           },
         }),
         null_ls.builtins.formatting.clang_format,
-},
+      },
     })
-    vim.keymap.set('n', '<leader>gf', function() vim.lsp.buf.format({ async = true }) end, { noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>gf', function() vim.lsp.buf.format({ async = true }) end,
+      { noremap = true, silent = true })
   end,
 }
-
