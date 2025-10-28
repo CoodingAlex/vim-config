@@ -19,3 +19,9 @@ require("lazy").setup("plugins")
 
 local cmp = require("cmp")
 
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  pattern = "*.java",
+  callback = function()
+    pcall(function() dofile(vim.fn.stdpath("config") .. "/ftplugin/java.lua") end)
+  end,
+})

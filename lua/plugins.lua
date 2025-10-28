@@ -1,4 +1,9 @@
 return {
+  { "EdenEast/nightfox.nvim" ,
+    init = function()
+			-- vim.cmd("colorscheme nightfox")
+    end
+  },
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
@@ -17,9 +22,17 @@ return {
 			})
 		end,
 		init = function()
-			-- vim.cmd("colorscheme onedark")
+			-- vim.cmd("colorscheme yyonedark")
 		end,
 	},
+  -- lua/plugins/rose-pine.lua
+ {
+	"rose-pine/neovim",
+	name = "rose-pine",
+	config = function()
+		-- vim.cmd("colorscheme rose-pine")
+	end
+},
 	--[[ {
 		"navarasu/onedark.nvim",
 		config = function()
@@ -50,7 +63,7 @@ return {
 					variables = "italic",
 				},
 			})
-			vim.cmd("colorscheme dracula")
+			-- vim.cmd("colorscheme dracula")
 		end,
 	},
 	{
@@ -69,7 +82,7 @@ return {
 					variables = { italic = false },
 				},
 			})
-			-- vim.cmd("colorscheme tokyonight")
+			vim.cmd("colorscheme tokyonight")
 		end,
 	},
 	{
